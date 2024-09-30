@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    div Navigation 
+    ul
+      li
+        a(href="/") main
+      li
+        a(href="/about") about
+      li
+        a(href="/contact") contact
+        ul
+          li
+            a(href="/contact/kyiv") Kyiv 
+          li
+            a(href="/contact/lviv") Lviv
+    block content
