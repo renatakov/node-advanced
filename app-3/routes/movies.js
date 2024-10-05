@@ -7,7 +7,7 @@ let result = [];
 
 async function getCSV () {
     const parsingData = fs
-        .createReadStream('./routes/data/movies.csv')
+        .createReadStream('./data/movies.csv')
         .pipe(parse(
             {
                 delimiter: ',',

@@ -10,11 +10,11 @@ block content
     const result = !{JSON.stringify(result)};    
     function showMovies(){
       console.log(result)
-      const container = document.getElementById('result-list');
+      const list = document.getElementById('result-list');
       result.forEach(item => {
         const li = document.createElement('li');
         li.textContent = `${item["Movie"]}, ${item["Year"]}, ${item["Genre"]}`
-        container.appendChild(li);
+        list.appendChild(li);
       })
     }
 
