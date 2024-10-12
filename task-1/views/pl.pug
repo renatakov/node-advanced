@@ -1,7 +1,26 @@
 extends layout
 
 block content
-  h1 Welcome to Pl
+  h1 Welcome to PL
   ul
-  each val in data
-    li= val.name
+    each val, id in data
+      li= val.name
+
+  table
+    thead
+      tr
+        th ID
+        th Name
+        th First Appeared
+        th Paradigm
+        th Creator
+
+    tbody
+      each val, id in data
+        tr
+          td= id
+          td= val.name
+          td= val.first_appeared
+          td= val.paradigm
+          td= val.creator
+    

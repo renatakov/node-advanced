@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1 Linux
+  table
+    thead
+      tr
+        th ID
+        th Name
+        th Based on
+        th Initial release
+        th Description
+
+    tbody
+      each val, id in data
+        tr
+          td= id
+          td= val.name
+          td= val.based_on
+          td= val.initial_release
+          td= val.description
