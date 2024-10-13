@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 form GET
+  
+  form(method="GET", action="/form/get-form-data")
+    div 
+      input(name="username",  value="vasisualiy")
+    div 
+      input(type="password", name="pass", value="qwerty789")
+    div 
+      input(type="submit", value="send")  

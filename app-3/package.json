@@ -6,6 +6,7 @@
     "start": "nodemon ./bin/www"
   },
   "dependencies": {
+    "body-parser": "^1.20.3",
     "cookie-parser": "~1.4.4",
     "csv": "^6.3.10",
     "csv-parse": "^5.5.6",
