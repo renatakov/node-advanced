@@ -4,3 +4,11 @@ block content
   h1= title
   p Welcome to #{title}
   a(href="/test?t1=89&t2=ibm") test
+
+  form(method="GET", action="/test")
+    div 
+      input(name="login", placeholder="login")
+    div 
+      input(type="password", name="pass", placeholder="password")
+    div 
+      input(type="submit", value="send")  
