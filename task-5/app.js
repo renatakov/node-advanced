@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
 
 const fileFilter = (req, file, cb) => {
     const fileLength = parseInt(req.headers['content-length'])
-    const fileTypes = ['doc', 'docx']
+    const fileTypes = ['application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']
     if(fileTypes.includes(file.mimetype) && fileLength < 1000){
         cb(null, true)
     } else {
@@ -28,8 +28,12 @@ const fileFilter = (req, file, cb) => {
 
 const upload = multer({storage: storage, fileFilter: fileFilter});
 
+app.get('/', (req, res) => {
+    res.json({ "work": true })
+});
+
 app.get('/task-5', (req, res)=>{
-    res.send('<form method="POST" action="/task-5" enctype="multipart/form-data"><input type="file"/id="file" name="file"><input type="submit" value="go"/></form>')
+    res.send('<form method="POST" action="/task-5" enctype="multipart/form-data"><input type="file" id="file" name="file"><input type="submit" value="go"/></form>')
 })
 
 app.post('/task-5', upload.single('file'), (req, res)=>{
