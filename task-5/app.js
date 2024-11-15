@@ -1,12 +1,14 @@
 const express = require('express');
-const app = express();
-const port = 3000;
 const multer = require('multer');
+const port = 3000;
 const path = require('path');
+
+
+const app = express();
 
 const storage = multer.diskStorage({
     destination: (req, file, cb)=>{
-        cd(null, 'files/')
+        cb(null, 'files/')
     },
     filename: (req, file, cb) => {
         const n = Date.now();
