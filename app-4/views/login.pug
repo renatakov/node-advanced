@@ -1,0 +1,29 @@
+include head
+
+body
+  .container 
+    include layout_header_site 
+    
+  .container
+    h1= title
+    p Welcome to #{title}
+
+    .row
+    .col-lg-4
+      form(method="get", action=`/login/check`) 
+        .mb-3
+            div
+              label.form-label(for='email') Email address
+            div
+              input#email.form-control(type='email', name="email", placeholder='name@example.com', value="user@email.ua")
+        .mb-3.d-none.code-block
+            div
+              label.form-label(for='code') Code
+            div
+              input#code.form-control(type='text', name="code",  placeholder='введите код присланный на email')
+        .mb-3
+            button(class="send-code", class="btn btn-success") Get code
+
+   
+  //- include layout_scripts   
+  script(src="/javascripts/login.js")

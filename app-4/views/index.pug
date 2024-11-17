@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  div
+    if email
+      | !{email}
+      a.nav-link(href=`/login/logout`) logout
+    else 
+      a(href=`/login`) login
