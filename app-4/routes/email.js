@@ -45,6 +45,7 @@ router.post('/login', async function (req, res, next) {
         // теперь нужно сгенерировать код для пользователя (для входа)
 
         const auth = createRandomString(16);
+        // код, который будет отправлен пользователю на email
         const code = createRandomString(6);
         query = "INSERT INTO user_code (auth, uid, code, created_at) VALUES (?, ?, ?, ?)"
         await connection.execute(query, [auth, user[0].id, code, Math.floor(Date.now() / 1000)]);
