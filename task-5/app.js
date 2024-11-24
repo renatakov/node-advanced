@@ -44,8 +44,10 @@ app.get('/task-5', (req, res) => {
 })
 
 app.post('/task-5', upload.single('file'), async (req, res) => {
-    const query = 'INSERT INTO files (id, file_name, file_ext, created_at, path) VALUES(?, ?, ?, ?)'
-    const file = await connection.execute(query, )
+    // console.log(req.file);
+    
+    // const query = 'INSERT INTO files (id, file_name, file_ext, created_at, path) VALUES(?, ?, ?, ?)'
+    // const file = await connection.execute(query, )
     res.json('file uploaded successfully')
 })
 
